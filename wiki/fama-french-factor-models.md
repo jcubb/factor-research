@@ -54,11 +54,9 @@ FF (1993) constructs factor-mimicking portfolios using 6 size × B/M portfolios 
 
 The three-factor model is:
 
-```
-R_i - RF = a_i + b_i(RM - RF) + s_i·SMB + h_i·HML + e_i
-```
+$$R_i - R_F = a_i + b_i(R_M - R_F) + s_i \cdot \text{SMB} + h_i \cdot \text{HML} + e_i$$
 
-**Asset pricing test**: if the model is well-specified, intercepts a_i should be statistically indistinguishable from zero.
+**Asset pricing test**: if the model is well-specified, intercepts $a_i$ should be statistically indistinguishable from zero.
 
 ### Results for Stock Portfolios
 
@@ -95,9 +93,7 @@ For bonds: TERM and DEF explain most of the common variation in returns on 7 gov
 
 FF (2015) starts from the Miller-Modigliani valuation identity. If total equity value equals the present value of future earnings net of investment:
 
-```
-M_t/B_t = [Σ E(Y_t+τ - dB_t+τ) / (1+r)^τ] / B_t
-```
+$$\frac{M_t}{B_t} = \frac{\sum_{\tau=1}^{\infty} E\left(Y_{t+\tau} - dB_{t+\tau}\right) / (1+r)^{\tau}}{B_t}$$
 
 This identity implies three cross-sectional predictions, holding everything else fixed:
 1. **Lower market price (higher B/M)** → higher expected return (value effect)
@@ -108,9 +104,7 @@ These three valuation-implied relations motivate adding profitability and invest
 
 ### The Five-Factor Model
 
-```
-R_i - RF = a_i + b_i(RM-RF) + s_i·SMB + h_i·HML + r_i·RMW + c_i·CMA + e_i
-```
+$$R_i - R_F = a_i + b_i(R_M - R_F) + s_i \cdot \text{SMB} + h_i \cdot \text{HML} + r_i \cdot \text{RMW} + c_i \cdot \text{CMA} + e_i$$
 
 **New factors**:
 
