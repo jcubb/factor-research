@@ -1,0 +1,62 @@
+site_name: Factor Research Wiki
+site_description: >-
+  A distilled, cross-linked knowledge base on equity, currency, and bond factor
+  models — academic research and practitioner risk-model machinery.
+site_url: https://jcubb.github.io/factor-research/
+repo_url: https://github.com/jcubb/factor-research
+repo_name: jcubb/factor-research
+docs_dir: wiki
+site_dir: site
+edit_uri: edit/main/wiki/
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+  - awesome-pages
+  - roamlinks
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jcubb/factor-research

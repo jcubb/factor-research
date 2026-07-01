@@ -1,0 +1,24 @@
+# === NEVER PUBLISH: third-party copyrighted source PDFs ===
+raw/
+
+# Internal LLM build notes — not part of the public site
+CLAUDE.md
+
+# Empty / derived outputs folder
+wiki/outputs/
+
+# MkDocs build output
+site/
+
+# Python / tooling
+.venv/
+venv/
+__pycache__/
+*.pyc
+.cache/
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.obsidian/
