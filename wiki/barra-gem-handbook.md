@@ -29,44 +29,39 @@ The numeraire is the currency perspective of the investor (typically the investo
 
 The exact relationship between numeraire return, local return, and exchange rate return is multiplicative:
 
-`1 + r = (1 + rx) * (1 + rl)` (EQ 1-4)
+$1 + r = (1 + r_x)(1 + r_l)$ (EQ 1-4)
 
-where `r` = numeraire return, `rx` = exchange rate return, `rl` = local asset return. GEM linearizes by dropping the cross-product terms `(rx * rl)` and `(rfl * rx)`, which are typically negligible at monthly frequency, yielding:
+where $r$ = numeraire return, $r_x$ = exchange rate return, $r_l$ = local asset return. GEM linearizes by dropping the cross-product terms $(r_x \cdot r_l)$ and $(r_{fl} \cdot r_x)$, which are typically negligible at monthly frequency, yielding:
 
-`1 + r ~ 1 + rx + rl`
+$1 + r \approx 1 + r_x + r_l$
 
 and:
 
-`Currency Return = rx + rfl - rf`
+$\text{Currency Return} = r_x + r_{fl} - r_f$
 
-where `rfl` = local risk-free rate and `rf` = numeraire risk-free rate.
+where $r_{fl}$ = local risk-free rate and $r_f$ = numeraire risk-free rate.
 
 ## The GEM Factor Model Equation
 
 ### GEM-MSCI
 
-```
-Rl(n) - Rfl(n) = SUM_{k=1}^{46} b(n,k)*h(k) + SUM_{j=1}^{38} y(n,j)*g(j) + SUM_{i=1}^{4} z(n,i)*q(i) + e(n)
-                  [country factors]         [industry factors]        [risk indices]       [specific]
-```
+$$R_l(n) - R_{fl}(n) = \underbrace{\sum_{k=1}^{46} b(n,k)\,h(k)}_{\text{country factors}} + \underbrace{\sum_{j=1}^{38} y(n,j)\,g(j)}_{\text{industry factors}} + \underbrace{\sum_{i=1}^{4} z(n,i)\,q(i)}_{\text{risk indices}} + e(n)$$
 
 ### GEM-FT
 
-```
-Rl(n) - Rfl(n) = SUM_{k=1}^{51} b(n,k)*h(k) + SUM_{j=1}^{36} y(n,j)*g(j) + SUM_{i=1}^{4} z(n,i)*q(i) + e(n)
-```
+$$R_l(n) - R_{fl}(n) = \sum_{k=1}^{51} b(n,k)\,h(k) + \sum_{j=1}^{36} y(n,j)\,g(j) + \sum_{i=1}^{4} z(n,i)\,q(i) + e(n)$$
 
 | Symbol | Meaning |
 |--------|---------|
-| `Rl(n)` | Local return to asset n |
-| `Rfl(n)` | Local risk-free rate in country of asset n |
-| `b(n,k)` | Asset n's exposure to country factor k |
-| `y(n,j)` | Asset n's exposure to industry factor j |
-| `z(n,i)` | Asset n's exposure to risk index i |
-| `h(k)` | Return to country factor k |
-| `g(j)` | Return to industry factor j |
-| `q(i)` | Return to risk index i |
-| `e(n)` | Specific return to asset n |
+| $R_l(n)$ | Local return to asset n |
+| $R_{fl}(n)$ | Local risk-free rate in country of asset n |
+| $b(n,k)$ | Asset n's exposure to country factor k |
+| $y(n,j)$ | Asset n's exposure to industry factor j |
+| $z(n,i)$ | Asset n's exposure to risk index i |
+| $h(k)$ | Return to country factor k |
+| $g(j)$ | Return to industry factor j |
+| $q(i)$ | Return to risk index i |
+| $e(n)$ | Specific return to asset n |
 
 ## Risk Indices (Style Factors)
 
@@ -74,16 +69,14 @@ GEM uses four global risk indices (style factors) that quantify common character
 
 | Risk Index | Description | Underlying Descriptors |
 |------------|-------------|----------------------|
-| **Size** (SIZE) | Differentiates large vs. small companies | `Size = ln(shares outstanding * price per share)` |
-| **Success** (SUCCESS) | Identifies recently successful stocks via relative strength / momentum | `Success = SUM_{i=1,12} ln(1 + rl_{-i}) - SUM_{i=1,12} ln(1 + rfl_{-i})` (cumulative 12-month local excess return) |
-| **Value** (VALUE) | Captures cheapness / value orientation | Four descriptors: (i) Forecast E/P = IBES FY1 EPS / price; (ii) Reported E/P = income before extraordinary items / (shares * price); (iii) Reported B/P = common equity / market cap; (iv) Yield = predicted annual dividend / price |
-| **Variability in Markets** (VIM) | Predicts residual volatility net of the market | `VIM = sigma_epsilon`, the standard deviation of the residual from the market model regression: `r_l - r_fl = alpha + beta*(r_m - r_fl) + epsilon` |
+| **Size** (SIZE) | Differentiates large vs. small companies | $\text{Size} = \ln(\text{shares outstanding} \times \text{price per share})$ |
+| **Success** (SUCCESS) | Identifies recently successful stocks via relative strength / momentum | $\text{Success} = \sum_{i=1}^{12} \ln(1 + r_{l,-i}) - \sum_{i=1}^{12} \ln(1 + r_{fl,-i})$ (cumulative 12-month local excess return) |
+| **Value** (VALUE) | Captures cheapness / value orientation | Four descriptors: (i) Forecast E/P = IBES FY1 EPS / price; (ii) Reported E/P = income before extraordinary items / (shares × price); (iii) Reported B/P = common equity / market cap; (iv) Yield = predicted annual dividend / price |
+| **Variability in Markets** (VIM) | Predicts residual volatility net of the market | $\text{VIM} = \sigma_\epsilon$, the standard deviation of the residual from the market model regression: $r_l - r_{fl} = \alpha + \beta(r_m - r_{fl}) + \epsilon$ |
 
 ### Standardization procedure
 
-```
-Normalized Risk Index = (Raw Data - Capitalization-weighted Mean) / Equal-weighted Standard Deviation
-```
+$$\text{Normalized Risk Index} = \frac{\text{Raw Data} - \text{Capitalization-weighted Mean}}{\text{Equal-weighted Standard Deviation}}$$
 
 - Computed within each local market separately
 - Winsorization at +/-4 standard deviations (values between 4 and 10 are truncated to +/-4; values beyond 10 are eliminated)
@@ -161,27 +154,27 @@ The estimation process follows nine sequential steps:
 
 Factor returns are estimated via monthly cross-sectional regression of asset excess returns on their factor exposures:
 
-`r_t = X_t * f_t + u_t` (EQ 4-1)
+$r_t = X_t f_t + u_t$ (EQ 4-1)
 
-where `r_t` = vector of excess returns, `X_t` = exposure matrix, `f_t` = factor returns to be estimated, `u_t` = specific returns. The regression is weighted by the square root of capitalization.
+where $r_t$ = vector of excess returns, $X_t$ = exposure matrix, $f_t$ = factor returns to be estimated, $u_t$ = specific returns. The regression is weighted by the square root of capitalization.
 
 ### Covariance matrix calculation
 
 The asset covariance matrix is decomposed via the fundamental factor model equation:
 
-`V = X * F * X^T + Delta` (EQ 2-8)
+$V = X F X^T + \Delta$ (EQ 2-8)
 
-where `X` = exposure matrix, `F` = factor covariance matrix, `X^T` = transpose of X, and `Delta` = diagonal matrix of specific risk variances.
+where $X$ = exposure matrix, $F$ = factor covariance matrix, $X^T$ = transpose of $X$, and $\Delta$ = diagonal matrix of specific risk variances.
 
 #### Exponential weighting
 
 The factor covariance matrix uses exponentially declining weights to give more importance to recent observations:
 
-`delta = (0.5)^{1/HALF-LIFE}` (EQ 4-2)
+$\delta = (0.5)^{1/\text{HALF-LIFE}}$ (EQ 4-2)
 
-`w(t) = delta^{T-t}` (EQ 4-3)
+$w(t) = \delta^{T-t}$ (EQ 4-3)
 
-where `T` is the current period and `t` is the observation period. An observation HALF-LIFE months ago receives half the weight of the current observation.
+where $T$ is the current period and $t$ is the observation period. An observation HALF-LIFE months ago receives half the weight of the current observation.
 
 | Component | Half-Life |
 |-----------|-----------|
@@ -189,17 +182,17 @@ where `T` is the current period and `t` is the observation period. An observatio
 | Volatility forecasts (local market, industry, risk factors) | 48 months (default) |
 | Selected markets (AUS, CAN, KOR, SAF, TAI, THA, UKI) | Match single-country model half-lives |
 
-Equal weighting of all observations corresponds to `HALF-LIFE = infinity`. Too short a half-life discards useful data from the beginning of the series and reduces estimation precision.
+Equal weighting of all observations corresponds to HALF-LIFE = ∞. Too short a half-life discards useful data from the beginning of the series and reduces estimation precision.
 
 #### GARCH(1,1) volatility scaling
 
 GEM uses GARCH models to capture time-varying market volatility:
 
-`r_t = E(r_t) + epsilon_t` (EQ 4-4)
+$r_t = \mathbb{E}(r_t) + \epsilon_t$ (EQ 4-4)
 
-`Var(r_m)_t = omega + alpha * epsilon_{t-1}^2 + beta * Var(r_m)_{t-1}` (EQ 4-5)
+$$\text{Var}(r_m)_t = \omega + \alpha \cdot \epsilon_{t-1}^{2} + \beta \cdot \text{Var}(r_m)_{t-1}$$ (EQ 4-5)
 
-This GARCH(1,1) specification says current market volatility depends on recent realized volatility (via `epsilon_{t-1}^2`) and recent forecast volatility (via `Var(r_m)_{t-1}`). If `alpha` and `beta` are positive, volatility increases with recent realized and forecast volatility (volatility clustering).
+This GARCH(1,1) specification says current market volatility depends on recent realized volatility (via $\epsilon_{t-1}^2$) and recent forecast volatility (via $\text{Var}(r_m)_{t-1}$). If $\alpha$ and $\beta$ are positive, volatility increases with recent realized and forecast volatility (volatility clustering).
 
 GARCH is applied to:
 - **Equity markets**: Japanese, Swedish, and U.S. local market factors
@@ -212,9 +205,9 @@ The fitted GARCH volatility is used to scale the local market factor in the cova
 
 Currency return is computed as:
 
-`Currency Return = rx + rfl - rf`
+$\text{Currency Return} = r_x + r_{fl} - r_f$
 
-where `rx` = exchange rate return, `rfl` = local risk-free rate, `rf` = numeraire risk-free return. Currency volatilities and correlations are calculated independently and then added to the factor covariance matrix.
+where $r_x$ = exchange rate return, $r_{fl}$ = local risk-free rate, $r_f$ = numeraire risk-free return. Currency volatilities and correlations are calculated independently and then added to the factor covariance matrix.
 
 ### Specific risk estimation
 

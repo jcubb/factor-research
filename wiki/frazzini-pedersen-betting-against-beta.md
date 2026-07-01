@@ -18,11 +18,9 @@ The empirical evidence is striking in its breadth. BAB factors work in US equiti
 
 An overlapping-generations economy where agents i = 1, …, I are born each period with wealth W and live two periods. Agents trade S securities, maximizing mean-variance utility subject to a portfolio constraint:
 
-```
-max  x'(E[P_{t+1} + δ_{t+1}] - (1+rf)P_t) - (γ_i/2) x'Ω x
+$$\max \; x'(\mathbb{E}[P_{t+1} + \delta_{t+1}] - (1+r_f)P_t) - \frac{\gamma_i}{2} x'\Omega x$$
 
-subject to:  m_i * Σ_s (x_s * P_s) ≤ W_i
-```
+$$\text{subject to:} \quad m_i \sum_s (x_s \cdot P_s) \leq W_i$$
 
 The constraint parameter m_i captures the investor's leverage limit:
 - m_i = 1: cannot use leverage (no borrowing)
@@ -33,18 +31,15 @@ The constraint parameter m_i captures the investor's leverage limit:
 
 The equilibrium required return for any security s is:
 
-```
-E[r_s] = r_f + ψ_t + β_s * λ_t
-```
+$$\mathbb{E}[r_s] = r_f + \psi_t + \beta_s \cdot \lambda_t$$
 
 where:
 - ψ_t = weighted average Lagrange multiplier across agents (measures funding constraint tightness)
 - λ_t = E[r_M] − r_f − ψ_t (effective risk premium, flattened by constraints)
 
 **Alpha relative to the market**:
-```
-α_s = ψ_t * (1 - β_s)
-```
+
+$$\alpha_s = \psi_t \cdot (1 - \beta_s)$$
 
 This is the key result: alpha *decreases* in beta. High-beta stocks have negative alpha; low-beta stocks have positive alpha. The alpha is proportional to ψ_t — when constraints are loose (ψ_t ≈ 0), the standard CAPM holds; when constraints bind tightly, the SML flattens dramatically.
 
@@ -52,9 +47,7 @@ This is the key result: alpha *decreases* in beta. High-beta stocks have negativ
 
 The BAB factor is constructed to be market-neutral (beta = 0):
 
-```
-r_BAB = (1/β_L)(r_L - r_f) - (1/β_H)(r_H - r_f)
-```
+$$r_{\text{BAB}} = \frac{1}{\beta_L}(r_L - r_f) - \frac{1}{\beta_H}(r_H - r_f)$$
 
 where:
 - r_L = return on a portfolio of low-beta assets
@@ -62,9 +55,8 @@ where:
 - β_L, β_H = portfolio betas (both rescaled to one before differencing, making the portfolio market-neutral)
 
 **Expected return** (Proposition 2):
-```
-E[r_BAB] = ((β_H - β_L) / (β_L * β_H)) * ψ_t ≥ 0
-```
+
+$$\mathbb{E}[r_{\text{BAB}}] = \frac{\beta_H - \beta_L}{\beta_L \cdot \beta_H} \cdot \psi_t \geq 0$$
 
 The BAB premium is increasing in: (1) the spread between high and low betas, and (2) the tightness of funding constraints ψ_t.
 
@@ -101,9 +93,8 @@ For each asset class, portfolios are sorted by beta. In every asset class, the r
 ### BAB Factor Performance (US Equities)
 
 Beta estimation: rolling 1-year daily return regressions, then shrunk toward one using:
-```
-β_shrunk = 0.6 * β_raw + 0.4 * 1.0
-```
+
+$$\beta_{\text{shrunk}} = 0.6 \cdot \beta_{\text{raw}} + 0.4 \cdot 1.0$$
 
 **US BAB factor** (1926–March 2012):
 
