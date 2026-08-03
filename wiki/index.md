@@ -1,6 +1,6 @@
 # Factor Research Wiki — Index
 
-> Compiled: 2026-05-13 | Updated: 2026-07-01 | Sources: 31 raw files | Wiki articles: 25 compiled, 3 educational (no article), 3 duplicates/other
+> Compiled: 2026-05-13 | Updated: 2026-08-03 | Sources: 32 raw files | Wiki articles: 26 compiled, 3 educational (no article), 3 duplicates/other
 
 ## Getting Started
 
@@ -43,6 +43,7 @@ New here? Two on-ramp files:
 | A geometric interpretation of the covariance matrix.pdf | Spruyt (visiondummy, 2014) | ✅ | Covariance matrix as rotation+scaling of white data; Σ = TTᵀ, T = RS; eigenvectors = orientation, eigenvalues = spread |
 | Robust Estimation of Risk Factor Model Covariance Matrix.pdf | Mossessian & Vieli (FactSet, 2017) | ✅ | RMT eigenvalue regularization; Marchenko–Pastur support region denoising; guarantees positive-definite matrix; regularization raises VaR |
 | a-cut-above-why-idiosyncratic-alpha-is-better-than-beating-the-benchmark.pdf | Harmsworth & Mand (AllianceBernstein, 2022) | ✅ | Idiosyncratic alpha (alpha net of factor betas) is more persistent and predictive than excess return; manager selection + fund-portfolio construction; 30,000-manager database |
+| OSoV.pdf | Novy-Marx (2013, JFE) | ✅ | Gross profits-to-assets predicts returns as well as B/M; profitability is "good growth," hedges value (corr −0.57); four-factor model (Mkt + industry-adj value/momentum/profitability) prices 15 anomalies; empirical origin of RMW |
 
 ## Wiki Articles
 
@@ -58,6 +59,7 @@ New here? Two on-ramp files:
 - [[msci-foundations-of-factor-investing]] — MSCI practitioner overview: six risk premia factors (Value, Size, Momentum, Low Vol, Yield, Quality); cyclicality; factor indexation; systematic risk vs. behavioral explanations
 - [[fama-french-factor-models]] — FF (1992): flat SML, size and B/M dominate beta; FF (1993): three-factor model (Mkt, SMB, HML) for stocks and bonds; FF (2015): five-factor model adds RMW and CMA; HML becomes redundant in five-factor world
 - [[frazzini-pedersen-betting-against-beta]] — BAB factor: leverage-constrained investors bid up high-beta assets → flat SML; BAB Sharpe 0.78 across US equities 1926–2012; works in 20 equity markets, Treasuries, credit, and futures
+- [[novy-marx-gross-profitability]] — Gross profits-to-assets predicts the cross-section as well as book-to-market; profitability is a growth strategy ("good growth") that hedges value (corr −0.57), roughly doubling the market Sharpe; works among the largest stocks and internationally; conditional HML|GP and PMU|BM subsume standard HML; four-factor model (Mkt + industry-adjusted value/momentum/profitability) prices 15 anomalies (RMSE 0.22 vs 0.54%/mo); empirical origin of the RMW factor
 
 ### Corporate Bond Factors
 - [[bektic-fama-french-corporate-bonds]] — FF factors extend to HY bonds (all four significant, multi-factor SR +30%); weak in IG; profitability reverses sign in IG; Merton model linkage
@@ -102,6 +104,7 @@ New here? Two on-ramp files:
 - **Flat SML**: FF (1992) establishes the flat security market line empirically for US stocks. BAB provides the theoretical mechanism (leverage constraints) and extends the flat SML to 20 equity markets, Treasuries, corporate bonds, and futures. [[fama-french-factor-models]] → [[frazzini-pedersen-betting-against-beta]]
 - **Two global shocks**: Verdelhan's finding that SDFs need two global shocks connects to the multi-factor structure documented by Fama-French and extended to bonds by Bektic/Houweling.
 - **HML redundancy**: FF (2015) shows HML's average return is explained by its RMW and CMA loadings in the five-factor model. This connects to Ehsani & Linnainmaa: if HML is redundant when profitability and investment are included, then "value momentum" strategies may be proxying for momentum in profitability/investment signals. [[fama-french-factor-models]] → [[ehsani-linnainmaa-factor-momentum]]
+- **Profitability as the origin of RMW**: Novy-Marx (2013) is the empirical antecedent of the FF (2015) profitability factor. He shows standard HML lies *inside the span* of profitability-controlled value (HML|GP) and value-controlled profitability (PMU|BM) — the mechanism behind HML's redundancy once RMW is added. Profitability's −0.57 correlation with value makes it "the other side of value," and his industry-adjusted four-factor model prices most of the anomaly zoo (distress, issuance, earnings-quality) as profitability in disguise. [[novy-marx-gross-profitability]] → [[fama-french-factor-models]] → [[msci-foundations-of-factor-investing]]
 - **Principal components**: Both Ehsani & Linnainmaa (high-eigenvalue PCs drive momentum) and Kelly (principal portfolios) use PCA as a core tool, but for different purposes — factor timing vs. portfolio construction. [[ehsani-linnainmaa-factor-momentum]] → [[kelly-principal-portfolios]]
 - **Sentiment and autocorrelation**: Ehsani & Linnainmaa's use of the KNS (2018) model ties factor momentum to investor sentiment persistence — connecting behavioral and rational frameworks.
 - **Factor momentum hierarchy**: Gupta & Kelly show TSFM subsumes both stock momentum (UMD) and industry momentum, confirming Ehsani & Linnainmaa's theoretical result with a practitioner implementation across 65 named factors. TSFM's crash avoidance (+18% in 2009 vs. UMD −31%) makes it a superior momentum implementation. [[gupta-kelly-factor-momentum-everywhere]] → [[ehsani-linnainmaa-factor-momentum]]
