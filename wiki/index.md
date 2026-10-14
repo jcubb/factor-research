@@ -1,6 +1,6 @@
 # Factor Research Wiki — Index
 
-> Compiled: 2026-05-13 | Updated: 2026-08-03 | Sources: 32 raw files | Wiki articles: 26 compiled, 3 educational (no article), 3 duplicates/other
+> Compiled: 2026-05-13 | Updated: 2026-10-14 | Sources: 33 raw files | Wiki articles: 27 compiled, 3 educational (no article), 3 duplicates/other
 
 ## Getting Started
 
@@ -44,6 +44,7 @@ New here? Two on-ramp files:
 | Robust Estimation of Risk Factor Model Covariance Matrix.pdf | Mossessian & Vieli (FactSet, 2017) | ✅ | RMT eigenvalue regularization; Marchenko–Pastur support region denoising; guarantees positive-definite matrix; regularization raises VaR |
 | a-cut-above-why-idiosyncratic-alpha-is-better-than-beating-the-benchmark.pdf | Harmsworth & Mand (AllianceBernstein, 2022) | ✅ | Idiosyncratic alpha (alpha net of factor betas) is more persistent and predictive than excess return; manager selection + fund-portfolio construction; 30,000-manager database |
 | OSoV.pdf | Novy-Marx (2013, JFE) | ✅ | Gross profits-to-assets predicts returns as well as B/M; profitability is "good growth," hedges value (corr −0.57); four-factor model (Mkt + industry-adj value/momentum/profitability) prices 15 anomalies; empirical origin of RMW |
+| dfa26_profitgrowth.pdf | Ahn, Black, Huang, Lord, Rizova & Saito (DFA, 2026) | ✅ | Current profit growth (YoY Δ quarterly op. profits / BE) predicts future profit growth, profitability, and returns beyond current profitability; complements price momentum (cleaner but less frequent signal); valuation-theory explanation of momentum; US + intl |
 
 ## Wiki Articles
 
@@ -51,6 +52,7 @@ New here? Two on-ramp files:
 - [[ehsani-linnainmaa-factor-momentum]] — Factor momentum subsumes stock momentum; factors are autocorrelated; momentum = timing other factors
 - [[moskowitz-nonlinear-momentum]] — Nonlinear S-curve weighting for TSMOM signals; Ferson-Siegel theory; neural nets confirm S-shape
 - [[gupta-kelly-factor-momentum-everywhere]] — TSFM (SR 0.84) across 65 factors; dominates UMD and INDMOM; avoids 2009 crash; works internationally
+- [[dfa-profit-growth-expected-returns]] — Current profit growth predicts future profit growth, profitability, and returns beyond the level of profitability; complements price momentum (cleaner but less frequently updated signal, ~40% overlap, neither subsumes the other); momentum attenuated only when profit-growth data are "fresh"; profit-growth premium ≈ half the volatility of momentum and no 2009-style crash; valuation-theory (cash-flow) explanation of why momentum works and decays fast; US + developed ex-US + emerging
 
 ### Currency & International
 - [[verdelhan-systematic-exchange-rates]] — Carry and dollar factors in bilateral exchange rates; two global shocks required in SDFs
@@ -104,6 +106,7 @@ New here? Two on-ramp files:
 - **Flat SML**: FF (1992) establishes the flat security market line empirically for US stocks. BAB provides the theoretical mechanism (leverage constraints) and extends the flat SML to 20 equity markets, Treasuries, corporate bonds, and futures. [[fama-french-factor-models]] → [[frazzini-pedersen-betting-against-beta]]
 - **Two global shocks**: Verdelhan's finding that SDFs need two global shocks connects to the multi-factor structure documented by Fama-French and extended to bonds by Bektic/Houweling.
 - **HML redundancy**: FF (2015) shows HML's average return is explained by its RMW and CMA loadings in the five-factor model. This connects to Ehsani & Linnainmaa: if HML is redundant when profitability and investment are included, then "value momentum" strategies may be proxying for momentum in profitability/investment signals. [[fama-french-factor-models]] → [[ehsani-linnainmaa-factor-momentum]]
+- **Profit growth as the "change" to profitability's "level"**: Where Novy-Marx (2013) prices the *level* of profitability, the DFA (2026) profit-growth paper prices its *change*. YoY change in quarterly operating profits / BE predicts future profit growth, future profitability, and returns even after controlling for current profitability, and defines a profit-growth factor not spanned by FF5 + momentum + reversal. It also offers a **valuation-theory bridge to momentum**: both profit growth and price momentum proxy for expected short-term profit growth (hence expected cash flows), which is why momentum predicts returns and why it decays fast — a *fundamental* complement to Ehsani & Linnainmaa's *statistical* (factor-autocorrelation) explanation. Momentum's predictive power is attenuated by profit growth only when earnings data are fresh. [[dfa-profit-growth-expected-returns]] → [[novy-marx-gross-profitability]] → [[ehsani-linnainmaa-factor-momentum]] → [[gupta-kelly-factor-momentum-everywhere]]
 - **Profitability as the origin of RMW**: Novy-Marx (2013) is the empirical antecedent of the FF (2015) profitability factor. He shows standard HML lies *inside the span* of profitability-controlled value (HML|GP) and value-controlled profitability (PMU|BM) — the mechanism behind HML's redundancy once RMW is added. Profitability's −0.57 correlation with value makes it "the other side of value," and his industry-adjusted four-factor model prices most of the anomaly zoo (distress, issuance, earnings-quality) as profitability in disguise. [[novy-marx-gross-profitability]] → [[fama-french-factor-models]] → [[msci-foundations-of-factor-investing]]
 - **Principal components**: Both Ehsani & Linnainmaa (high-eigenvalue PCs drive momentum) and Kelly (principal portfolios) use PCA as a core tool, but for different purposes — factor timing vs. portfolio construction. [[ehsani-linnainmaa-factor-momentum]] → [[kelly-principal-portfolios]]
 - **Sentiment and autocorrelation**: Ehsani & Linnainmaa's use of the KNS (2018) model ties factor momentum to investor sentiment persistence — connecting behavioral and rational frameworks.
