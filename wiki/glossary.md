@@ -11,7 +11,10 @@ See [[start-here]] for a guided reading path.
 - **Factor** — A common source of return/risk shared across many securities (e.g. the market, value, momentum). A factor model explains a security's return as a weighted sum of factor returns plus a leftover idiosyncratic piece. See [[fama-french-factor-models]].
 - **Factor return** — The return of the factor itself (often the return of a long-short portfolio built to isolate it).
 - **Loading / exposure / beta** — How sensitive a security is to a factor. A stock with a value loading of 1.2 moves 1.2× the value factor. "Beta" usually means the loading; "market beta" is the loading on the market factor.
-- **Alpha** — Return not explained by the factors in the model — the intercept of the return regression. Interpreted as skill or mispricing. Contrast **idiosyncratic alpha** below.
+- **CAPM (Capital Asset Pricing Model)** — The single-factor equilibrium model: an asset's expected excess return equals its market beta times the market risk premium. The baseline every multi-factor model extends and every alpha is implicitly measured against. See [[sharpe-lintner-capm]].
+- **SML / CML** — Security Market Line: expected return as a function of *beta* (holds for every asset). Capital Market Line: expected return as a function of *total volatility* (holds only for efficient portfolios). The "flat SML" — beta earning less than the CAPM predicts — is a recurring theme. See [[sharpe-lintner-capm]], [[frazzini-pedersen-betting-against-beta]].
+- **Alpha** — Return not explained by the factors in the model — the intercept of the return regression (Jensen's alpha, originally the CAPM intercept). Interpreted as skill or mispricing. Always *model-relative*: upgrading the model reclassifies alpha as beta. See [[sharpe-lintner-capm]]. Contrast **idiosyncratic alpha** below.
+- **Four-factor (Carhart) model** — Fama-French three factors plus a momentum factor (PR1YR/UMD); the standard benchmark for judging active performance across this KB. See [[carhart-four-factor-persistence]].
 - **Active / excess return** — A fund's return minus its benchmark's return. Note this still contains factor beta; alpha is what's left after stripping factors out.
 - **Idiosyncratic alpha (IA)** — Active return *net of common factor betas* — the nonreplicable part worth an active fee. More persistent than raw excess return. See [[harmsworth-idiosyncratic-alpha]].
 - **Systematic vs. specific (idiosyncratic) risk** — Systematic risk comes from factor exposures (shared, undiversifiable); specific risk is security-unique (diversifiable). A risk model splits total risk into these two.
@@ -23,7 +26,7 @@ See [[start-here]] for a guided reading path.
 - **HML (High Minus Low)** — The value factor: high book-to-market (cheap) minus low (expensive).
 - **RMW (Robust Minus Weak)** — The profitability factor.
 - **CMA (Conservative Minus Aggressive)** — The investment factor (low vs. high asset growth).
-- **UMD / MOM (Up Minus Down)** — The momentum factor: recent winners minus losers.
+- **UMD / MOM (Up Minus Down)** — The momentum factor: recent winners minus losers. Originates in [[jegadeesh-titman-momentum]]; packaged as a tradable factor (PR1YR) by [[carhart-four-factor-persistence]].
 - **BAB (Betting Against Beta)** — Long low-beta, short high-beta, leverage-adjusted. See [[frazzini-pedersen-betting-against-beta]].
 - **Low Volatility / Min Vol** — The anomaly that low-risk stocks earn high risk-adjusted returns; the practitioner cousin of BAB.
 - **Quality / Yield** — Profitability-and-stability factors; dividend/earnings yield factors. Part of the MSCI six. See [[msci-foundations-of-factor-investing]].
@@ -31,7 +34,7 @@ See [[start-here]] for a guided reading path.
 
 ## Momentum vocabulary
 
-- **Cross-sectional momentum** — Rank securities against each other; buy relative winners.
+- **Cross-sectional momentum** — Rank securities against each other; buy relative winners. The original form, from [[jegadeesh-titman-momentum]].
 - **Time-series momentum (TSMOM)** — Judge each asset against its *own* past; go long if it's been rising. See [[moskowitz-nonlinear-momentum]].
 - **Time-series factor momentum (TSFM)** — TSMOM applied to factor returns. See [[gupta-kelly-factor-momentum-everywhere]].
 - **Factor momentum** — Predictability in factor returns from their own past (factor autocorrelation); argued to subsume stock momentum. See [[ehsani-linnainmaa-factor-momentum]].

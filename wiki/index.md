@@ -1,6 +1,6 @@
 # Factor Research Wiki — Index
 
-> Compiled: 2026-05-13 | Updated: 2026-10-14 | Sources: 33 raw files | Wiki articles: 27 compiled, 3 educational (no article), 3 duplicates/other
+> Compiled: 2026-05-13 | Updated: 2026-10-18 | Sources: 33 raw files | Wiki articles: 30 paper articles (3 foundational added 2026-10-18 without raw PDF) + 5 concept syntheses, 3 educational (no article), 3 duplicates/other
 
 ## Getting Started
 
@@ -48,7 +48,22 @@ New here? Two on-ramp files:
 
 ## Wiki Articles
 
+### Course — Three One-Hour Lectures (slide-by-slide beat sheets)
+Built on the concept syntheses below; each is a ~50-min lecture with objectives, slide beats, discussion questions, and an exercise. Added 2026-10-18.
+- [[lecture-1-cross-section]] — From the CAPM to the Factor Zoo (the cross-section of expected returns)
+- [[lecture-2-the-factors]] — The Factors and Their Dynamics (the individual factors; momentum taxonomy; cyclicality & timing)
+- [[lecture-3-building-models]] — Building and Using Factor Models (construction, risk models, covariance, attribution)
+
+### Concept Syntheses (teaching layer — not paper-specific)
+These stitch the paper articles below into teachable arguments, and are the instructor texts for the lectures above. Added 2026-10-18; each maps to a lecture (see [[start-here]]).
+- [[capm-and-the-cross-section]] — The arc from the CAPM through its empirical collapse to the factor zoo and multiple-testing skepticism; the model ladder (CAPM ⊂ FF3 ⊂ Carhart4 ⊂ FF5) and why "alpha" is model-relative. *(Lecture 1 spine)*
+- [[momentum-taxonomy]] — Three axes (cross-sectional vs. time-series; stock/factor/industry/asset; signal shape) that locate any momentum strategy; the subsumption debate; behavioral/statistical/fundamental explanations; crashes. *(Lecture 2, momentum half)*
+- [[factor-cyclicality-and-timing]] — Premia vary (easy claim) vs. can you time them (hard claim); four timing signals ranked by evidence; managed portfolios as the honest test harness. *(Lecture 2, timing half)*
+- [[factor-construction-methods]] — The pipeline from characteristic to factor return; sorts vs. cross-sectional regression (simple vs. pure factors); weighting and the collinearity/constraint machinery; why FF returns ≠ Barra returns. *(Lecture 3, construction half)*
+- [[risk-model-anatomy]] — The four components of a commercial risk model (exposures, factor returns, factor covariance, specific risk), the eigen-thread through covariance estimation, attribution/VaR/optimization, and the Barra family as worked example. *(Lecture 3, risk-model half)*
+
 ### Momentum & Factor Dynamics
+- [[jegadeesh-titman-momentum]] — The empirical origin of momentum: a zero-cost buy-winners/sell-losers strategy earns ~0.95%/mo (6×6), unexplained by CAPM beta or lead-lag effects, concentrated in positive own-serial correlation, and partially reversing in years 2–3; the source of the UMD/MOM/PR1YR factor *(foundational — no raw PDF)*
 - [[ehsani-linnainmaa-factor-momentum]] — Factor momentum subsumes stock momentum; factors are autocorrelated; momentum = timing other factors
 - [[moskowitz-nonlinear-momentum]] — Nonlinear S-curve weighting for TSMOM signals; Ferson-Siegel theory; neural nets confirm S-shape
 - [[gupta-kelly-factor-momentum-everywhere]] — TSFM (SR 0.84) across 65 factors; dominates UMD and INDMOM; avoids 2009 crash; works internationally
@@ -58,6 +73,8 @@ New here? Two on-ramp files:
 - [[verdelhan-systematic-exchange-rates]] — Carry and dollar factors in bilateral exchange rates; two global shocks required in SDFs
 
 ### Foundational Factor Models
+- [[sharpe-lintner-capm]] — The single-factor baseline the whole KB is defined against: equilibrium pricing of covariance-with-the-market, two-fund separation, CML vs. SML, the systematic/specific risk split (origin of "specific risk"), Jensen's regression-intercept definition of "alpha," and the empirical failures (flat SML, characteristic anomalies, Roll's critique) that motivate every multi-factor model that follows *(foundational — no raw PDF)*
+- [[carhart-four-factor-persistence]] — Adds a momentum factor (PR1YR) to Fama-French, creating the four-factor model that is the KB's default alpha benchmark; empirically, mutual-fund "hot hands" persistence is mostly passive momentum exposure plus costs, not skill; expense ratio and turnover subtract from return roughly one-for-one *(foundational — no raw PDF)*
 - [[msci-foundations-of-factor-investing]] — MSCI practitioner overview: six risk premia factors (Value, Size, Momentum, Low Vol, Yield, Quality); cyclicality; factor indexation; systematic risk vs. behavioral explanations
 - [[fama-french-factor-models]] — FF (1992): flat SML, size and B/M dominate beta; FF (1993): three-factor model (Mkt, SMB, HML) for stocks and bonds; FF (2015): five-factor model adds RMW and CMA; HML becomes redundant in five-factor world
 - [[frazzini-pedersen-betting-against-beta]] — BAB factor: leverage-constrained investors bid up high-beta assets → flat SML; BAB Sharpe 0.78 across US equities 1926–2012; works in 20 equity markets, Treasuries, credit, and futures
@@ -99,6 +116,9 @@ New here? Two on-ramp files:
 
 ## Key Themes & Cross-Links
 
+- **The CAPM baseline → the whole factor program**: The single-factor CAPM defines the vocabulary the rest of the KB argues with — beta, alpha (as a regression intercept), the market factor, and the systematic/specific risk split. Its empirical failure has a specific shape: the SML is too flat (→ [[frazzini-pedersen-betting-against-beta]] explains why and exploits it), and characteristics beat beta (→ [[fama-french-factor-models]]). Every multi-factor model keeps the CAPM's architecture and just adds priced dimensions. [[sharpe-lintner-capm]] → [[fama-french-factor-models]] → [[frazzini-pedersen-betting-against-beta]]
+- **The momentum lineage**: Jegadeesh-Titman discover the anomaly → Carhart packages it as the PR1YR factor and makes the four-factor model the standard alpha benchmark → Ehsani-Linnainmaa and Gupta-Kelly reinterpret/scale it as *factor* momentum → Moskowitz et al. refine its signal shape → DFA give it a cash-flow explanation. [[jegadeesh-titman-momentum]] → [[carhart-four-factor-persistence]] → [[ehsani-linnainmaa-factor-momentum]] → [[gupta-kelly-factor-momentum-everywhere]] → [[moskowitz-nonlinear-momentum]] → [[dfa-profit-growth-expected-returns]]
+- **The four-factor benchmark**: "Four-factor alpha" / "Carhart MOM" appears across the KB as the yardstick for abnormal return. [[carhart-four-factor-persistence]] is cited as the benchmark by [[frazzini-pedersen-betting-against-beta]], [[cohen-frazzini-economic-links]], [[fama-french-luck-vs-skill]], [[houweling-vanzundert-factor-investing-corporate-bonds]], and [[barra-gem-handbook]].
 - **Factor momentum ↔ Stock momentum**: Ehsani & Linnainmaa show stock momentum is a byproduct of factor autocorrelation. The FF factor zoo (SMB, HML, RMW, CMA) is the universe over which this momentum is documented. [[ehsani-linnainmaa-factor-momentum]] → [[fama-french-factor-models]]
 - **Linear vs. nonlinear signals**: Moskowitz et al. show the optimal TSMOM signal is an S-curve, not a line or sign function. The NL effect applies to factor momentum strategies too. [[moskowitz-nonlinear-momentum]] → [[ehsani-linnainmaa-factor-momentum]]
 - **Carry factor across markets**: Verdelhan's carry factor in FX parallels the value/carry concept in equities and bonds. [[verdelhan-systematic-exchange-rates]]
