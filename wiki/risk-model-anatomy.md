@@ -2,7 +2,7 @@
 
 > Concept synthesis (not a single paper). Assembles the Barra and covariance articles into one picture: the parts of a commercial factor risk model and how they fit. Companion reading: [[start-here]] Stages 3 and 5.
 
-A factor *pricing* model asks why returns differ; a factor *risk* model asks how returns **co-move**, so you can forecast portfolio risk, attribute it, and optimize against it. This article is the exploded diagram — the four components, the one equation that links them, and the Barra family as the worked example. It is the spine of a third lecture, and it is where almost half the KB's articles converge.
+A factor *pricing* model asks why returns differ; a factor *risk* model asks how returns **co-move**, so you can forecast portfolio risk, attribute it, and optimize against it. This article lays out the four components, the one equation that links them, and the Barra family as the worked example. Almost half the KB's articles converge here, and it backs the third lecture.
 
 ## The job and the one equation
 
@@ -19,7 +19,7 @@ Everything below is how each of these four objects is actually built. The system
 
 ## Component 1 — Exposures ($X$)
 
-The columns of $X$: a market/world factor, **industries**, **countries** (for global models), and **styles** (value, momentum, size, …). Styles are standardized characteristics; industries/countries are dummies. How these are defined and standardized is the subject of [[factor-construction-methods]] — and the exhaustive industry/country blocks create the collinearity-with-intercept problem solved there by sum-to-zero constraints. Getting $X$ right is upstream of everything; a mis-specified exposure contaminates the whole covariance.
+The columns of $X$: a market/world factor, **industries**, **countries** (for global models), and **styles** (value, momentum, size, …). Styles are standardized characteristics; industries/countries are dummies. How these are defined and standardized is the subject of [[factor-construction-methods]] — and the exhaustive industry/country blocks create the collinearity-with-intercept problem solved there by sum-to-zero constraints. $X$ sits upstream of everything; a mis-specified exposure contaminates the whole covariance.
 
 ## Component 2 — Factor returns ($f$)
 
@@ -41,7 +41,7 @@ The hardest part, and where the most KB articles live. A naive sample covariance
 | **RMT / Marchenko-Pastur denoising** | separate signal eigenvalues from noise; guarantee PD | [[mossessian-robust-covariance-estimation]] |
 | **Bayesian shrinkage** | stabilize noisy estimates toward a target | [[barra-use4-methodology]] |
 
-These rest on one piece of geometry: a covariance matrix is a **rotation (eigenvectors) + scaling (eigenvalues)** of white data ([[spruyt-geometric-covariance-matrix]]). Every advanced method here manipulates the eigen-spectrum — keep the eigenvectors, fix the eigenvalues. That single thread (geometry → RMT denoising → USE4 eigenfactor adjustment → Kelly's SVD) is the KB's deepest technical through-line.
+These rest on one piece of geometry: a covariance matrix is a **rotation (eigenvectors) + scaling (eigenvalues)** of white data ([[spruyt-geometric-covariance-matrix]]). Every advanced method here manipulates the eigen-spectrum — keep the eigenvectors, fix the eigenvalues. That thread — geometry → RMT denoising → USE4 eigenfactor adjustment → Kelly's SVD — is the KB's main technical through-line.
 
 ## Component 4 — Specific risk ($\Delta$)
 
@@ -52,11 +52,11 @@ The diagonal — each asset's idiosyncratic variance, the part the factors don't
 - scaling adjustments (e.g. by size/cap decile),
 - Bayesian shrinkage ([[barra-use4-methodology]]).
 
-Specific risk is where [[harmsworth-idiosyncratic-alpha]] reconnects risk to *alpha*: the residual the risk model treats as noise is exactly where a skilled manager's non-replicable edge lives.
+Specific risk is where [[harmsworth-idiosyncratic-alpha]] reconnects risk to *alpha*: the residual the risk model treats as noise is where a skilled manager's non-replicable edge lives.
 
 ## Using the model
 
-With $\Sigma_{\text{assets}} = X\Sigma_F X' + \Delta$ assembled, a risk model earns its keep in four jobs:
+With $\Sigma_{\text{assets}} = X\Sigma_F X' + \Delta$ assembled, a risk model is put to four jobs:
 
 1. **Portfolio risk forecast** — $\sigma_p^2 = w'\Sigma_{\text{assets}}w$, decomposed into factor and specific contributions.
 2. **Risk attribution** — which factors drive risk, via marginal contributions. The pitfalls are real: absolute return sources give nonsense (zero cash risk, universally negative MCARs); benchmark-relative sources and a World factor fix it ([[davis-menchero-pitfalls-risk-attribution]]).
@@ -65,7 +65,7 @@ With $\Sigma_{\text{assets}} = X\Sigma_F X' + \Delta$ assembled, a risk model ea
 
 ## The Barra family as worked example
 
-The KB's three Barra articles are one model evolving — the cleanest concrete realization of the anatomy above:
+The KB's three Barra articles are one model evolving — a concrete realization of the anatomy above:
 
 - **USE3** ([[barra-use3-handbook]]) — the template: 52 industries + 13 style risk indices, GLS factor returns, EWMA+GARCH covariance, three-part specific risk.
 - **USE4** ([[barra-use4-methodology]]) — adds the three big $\Sigma_F$ innovations: eigenfactor risk adjustment, volatility regime adjustment, an explicit Country factor with differential half-lives (motivated by [[cuffe-barra-market-factor]]).

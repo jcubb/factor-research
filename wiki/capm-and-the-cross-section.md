@@ -2,7 +2,7 @@
 
 > Concept synthesis (not a single paper). Stitches the foundational asset-pricing articles into one narrative. Companion reading: [[start-here]] Stages 1–2.
 
-Every empirical factor paper in this KB is an answer to one question: **why do different stocks earn different average returns?** This article tells that story as a single arc — from the one clean theoretical answer (the CAPM), through its empirical collapse, to the sprawling "factor zoo" and the skepticism it provoked. It is the connective tissue for the individual paper articles, and the spine of a first lecture on factors.
+Most of the empirical factor papers in this KB address a single question: **why do different stocks earn different average returns?** This article traces the main line of that work — from the CAPM's clean theoretical answer, through its empirical failure, to the large set of published factors (the "factor zoo") and the skepticism that followed. It gives the individual paper articles a shared frame and backs the first lecture on factors.
 
 ## The question, stated precisely
 
@@ -11,22 +11,22 @@ Fix a moment in time and look *across* stocks (the **cross-section**). Their exp
 - **Risk-based:** high-return stocks are riskier in some way investors care about; the extra return is *compensation* and should persist.
 - **Mispricing-based:** high-return stocks are *cheap* for behavioral or frictional reasons; the extra return is a correction and may erode as it becomes known.
 
-The whole literature oscillates between these two readings, and most papers decline to settle it. Holding the distinction in mind is the single most useful habit for reading the KB.
+Most papers decline to settle which reading applies, and the two recur throughout the KB. The distinction organizes much of what follows.
 
 ## The one clean answer: the CAPM
 
-The [[sharpe-lintner-capm]] gives the most elegant possible answer: the *only* thing that should predict a stock's expected return is its **beta** — its covariance with the market portfolio.
+The [[sharpe-lintner-capm]] gives the sharpest answer: the *only* thing that should predict a stock's expected return is its **beta** — its covariance with the market portfolio.
 
 $$E[R_i] - R_f = \beta_i\,(E[R_m] - R_f)$$
 
-Everything else — size, industry, volatility, "cheapness" — is irrelevant, because a diversified investor washes it out. This is a beautiful theory: one factor, one line (the SML), and a sharp null hypothesis ($\alpha_i = 0$ for every asset). It also hands the field its permanent vocabulary: **beta, alpha, the market factor, systematic vs. specific risk.**
+Everything else — size, industry, volatility, "cheapness" — is irrelevant, because a diversified investor washes it out. The model is compact: one factor, one line (the SML), and a sharp null hypothesis ($\alpha_i = 0$ for every asset). It also fixes the field's vocabulary — **beta, alpha, the market factor, systematic vs. specific risk.**
 
 ## The empirical collapse
 
-The data refused to cooperate, and *how* it failed defines everything after:
+The data did not match the model, and the pattern of the mismatch shaped the literature that followed:
 
-1. **The SML is too flat.** Beta earns far less than the CAPM predicts; low-beta stocks out-earn their prediction and high-beta stocks under-earn. Documented decisively in [[fama-french-factor-models]] (1992), explained and monetized as a factor in [[frazzini-pedersen-betting-against-beta]].
-2. **Characteristics beat beta.** Variables the CAPM says should not matter — predict returns *after* controlling for beta.
+1. **The SML is too flat.** Beta earns far less than the CAPM predicts; low-beta stocks out-earn their prediction and high-beta stocks under-earn. Documented in [[fama-french-factor-models]] (1992), explained and traded as a factor in [[frazzini-pedersen-betting-against-beta]].
+2. **Characteristics beat beta.** Variables the CAPM says should be irrelevant predict returns even after controlling for beta.
 
 The survivors of decades of cross-sectional testing:
 
@@ -55,22 +55,22 @@ $$\text{CAPM} \subset \text{FF3} \subset \text{Carhart 4} \subset \text{FF5} \;(
 
 Two structural lessons fall out of this ladder:
 
-- **"Alpha" is model-relative.** Each rung reclassifies the previous rung's alpha as beta. A CAPM alpha is often just size/value/momentum exposure; a Carhart alpha can still be profitability exposure. This is the recurring plot of the entire KB — see especially [[fama-french-luck-vs-skill]] and [[harmsworth-idiosyncratic-alpha]].
-- **Factors can make each other redundant.** Once RMW and CMA enter, HML's premium is explained by its loadings on them — value is "profitability and investment in disguise" ([[novy-marx-gross-profitability]] is the mechanism). Adding a factor is not free; it can reveal an old one was never independent.
+- **"Alpha" is model-relative.** Each rung reclassifies the previous rung's alpha as beta. A CAPM alpha is often just size/value/momentum exposure; a Carhart alpha can still be profitability exposure. The theme recurs across the KB — see especially [[fama-french-luck-vs-skill]] and [[harmsworth-idiosyncratic-alpha]].
+- **Factors can make each other redundant.** Once RMW and CMA enter, HML's premium is explained by its loadings on them — value is "profitability and investment in disguise" ([[novy-marx-gross-profitability]] is the mechanism). Adding a factor can also reveal that an existing one was never independent.
 
 ## The factor zoo and the skeptic's reply
 
-By the 2010s, hundreds of published "factors" existed — the **factor zoo**. This provoked a methodological backlash that every serious factor user must internalize:
+By the 2010s there were hundreds of published "factors" — the **factor zoo**. A methodological backlash followed, and it matters for anyone using factors seriously:
 
-- **Multiple testing.** Test enough characteristics and some clear any fixed significance bar by chance. The honest hurdle for a "new" factor is far higher than the textbook *t* > 2 (Harvey-Liu-Zhu, 2016 — referenced across the KB but not yet held; a prime ingestion candidate).
+- **Multiple testing.** Test enough characteristics and some clear any fixed significance bar by chance. The bar for a genuine "new" factor is far higher than the textbook *t* > 2 (Harvey-Liu-Zhu, 2016 — referenced across the KB but not yet held; a prime ingestion candidate).
 - **Replication and decay.** Many anomalies weaken out-of-sample or after publication (McLean & Pontiff). The KB's own [[li-episodic-factor-pricing]] reframes this as premia switching *off* in certain regimes rather than vanishing.
 - **Spurious factors are costly.** Adding a bogus factor to a *risk model* is asymmetrically damaging — far worse than omitting a real one ([[menchero-factor-alignment]]).
 
-The disciplined response is not nihilism but parsimony: a handful of factors with (a) a plausible economic story, (b) out-of-sample and international evidence, and (c) robustness to construction choices. The [[msci-foundations-of-factor-investing]] six — Value, Size, Momentum, Low Vol, Yield, Quality — are the practitioner's shortlist of survivors.
+The response is parsimony rather than nihilism: a handful of factors with (a) a plausible economic story, (b) out-of-sample and international evidence, and (c) robustness to construction choices. The [[msci-foundations-of-factor-investing]] six — Value, Size, Momentum, Low Vol, Yield, Quality — are the practitioner's shortlist of survivors.
 
 ## Risk vs. mispricing, revisited
 
-With the survivors in hand, the risk/mispricing question sharpens into concrete, testable sub-claims rather than philosophy:
+With the survivors in hand, the risk/mispricing question becomes a set of concrete, testable sub-claims:
 
 - **Value** — distress risk (risk) vs. extrapolation/overreaction (mispricing). Both have evidence.
 - **Momentum** — hard to cast as risk (it *reverses*); mostly read as under-reaction ([[jegadeesh-titman-momentum]]) or as factor autocorrelation ([[ehsani-linnainmaa-factor-momentum]]) or expected cash-flow growth ([[dfa-profit-growth-expected-returns]]).

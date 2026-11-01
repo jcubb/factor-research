@@ -2,7 +2,7 @@
 
 > Concept synthesis (not a single paper). Explains how a raw stock characteristic becomes a tradable factor return, and why the "same" factor has different returns in different hands. Companion reading: [[start-here]] Stage 4.
 
-A factor is not a number you look up — it is a *portfolio* you build, and the build choices change the answer. This article walks the pipeline from a raw characteristic (say, book-to-market) to a factor return, flags the decision at each step, and explains the KB's central construction result: **Fama-French factor returns and Barra factor returns for the "same" characteristic are genuinely different objects.** It is the most directly transferable concept article for anyone building a cross-sectional model.
+A factor is a *portfolio* you build, and the build choices change the answer. This article walks the pipeline from a raw characteristic (say, book-to-market) to a factor return, flags the decision at each step, and explains one of the KB's main construction results: **Fama-French factor returns and Barra factor returns for the "same" characteristic are genuinely different objects.** It is the concept article that transfers most directly to anyone building a cross-sectional model.
 
 ## The pipeline
 
@@ -19,7 +19,7 @@ Before any portfolio, the characteristic must be made comparable across stocks a
 - **Center** — subtract a cross-sectional mean so zero exposure = "average stock." *Which* mean matters: an **equal-weighted** mean vs. a **cap-weighted** mean put "zero" in different places. Cap-weighted demeaning makes the market portfolio have zero style tilt — the right convention when the downstream model uses a cap-weighted market/sum-to-zero constraint. Mixing equal-weighted centering with cap-weighted constraints is a silent inconsistency.
 - **Handle the denominator.** Ratios with small/near-zero denominators (ROE on tiny book equity) explode; prefer robust definitions (e.g. gross-profits-to-assets, [[novy-marx-gross-profitability]]).
 
-This step is where "weighting coherence end to end" is won or lost: centering, regression weights, and aggregation must all use the same weighting scheme or the pieces won't reconcile.
+This is where weighting must stay coherent end to end: centering, regression weights, and aggregation must use the same weighting scheme, or the pieces won't reconcile.
 
 ## Step 2 — The factor-forming rule
 
@@ -45,7 +45,7 @@ where $X_t = [\,\text{market} \mid \text{industries} \mid \text{countries} \mid 
 
 ## Step 3 — Weighting the regression
 
-In Route B, *how* you weight the cross-sectional regression changes the factor return materially — not a rounding effect:
+In Route B, *how* you weight the cross-sectional regression changes the factor return materially:
 
 | Weighting | Rationale | KB note |
 |---|---|---|
@@ -54,7 +54,7 @@ In Route B, *how* you weight the cross-sectional regression changes the factor r
 | **Root-cap** ($\sqrt{\text{cap}}$) | GLS compromise; specific variance ∝ 1/size | Barra default |
 | **Inverse specific variance** | GLS-optimal; minimizes factor-portfolio volatility | [[msci-risk-return-factor-portfolios]] |
 
-[[msci-risk-return-factor-portfolios]] shows these choices move factor returns by **>300 bps for Momentum**. Weighting is a first-order modeling decision, not plumbing.
+[[msci-risk-return-factor-portfolios]] shows these choices move factor returns by **>300 bps for Momentum** — a first-order modeling decision, not plumbing detail.
 
 ## Step 4 — Identification: the collinearity trap
 
@@ -66,7 +66,7 @@ Route B has a structural pitfall when the design includes exhaustive categorical
 
 All linear equality constraints are **closed form** — no numerical optimization (that's only needed for *inequality* constraints). Styles need no constraint once centered. The identification weakens (but doesn't break) when a category lives in one place only — e.g. an industry present in a single country.
 
-## Simple vs. pure — the central result
+## Simple vs. pure factors
 
 The two routes produce different objects for the *same* named characteristic:
 

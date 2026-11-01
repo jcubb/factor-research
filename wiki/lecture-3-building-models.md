@@ -39,7 +39,7 @@ By the end, students can:
 
 **Slide 6 · Why FF ≠ Barra.** The same "value factor" differs across methods (weight corr 0.70–0.90 for styles). This is why cross-model alpha comparisons need care. Source: [[menchero-characteristics-factor-portfolios]].
 
-**Slide 7 · Weighting is first-order.** Equal / cap / root-cap / inverse-specific-variance — moves factor returns by **>300 bps for momentum**. Not plumbing. Source: [[msci-risk-return-factor-portfolios]].
+**Slide 7 · Weighting is first-order.** Equal / cap / root-cap / inverse-specific-variance — moves factor returns by **>300 bps for momentum**: a first-order modeling choice, not plumbing detail. Source: [[msci-risk-return-factor-portfolios]].
 
 **Slide 8 · The identification trap.** Exhaustive industry/country dummies each sum to the ones vector → collinear with the intercept → rank-deficient. Dropping the constant does *not* fix it. *(Board: show two dummy blocks both summing to 1.)*
 

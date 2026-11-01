@@ -7,6 +7,9 @@ CLAUDE.md
 # Empty / derived outputs folder
 wiki/outputs/
 
+# Pre-revision snapshots kept locally for comparison — not part of the public site
+_originals-*/
+
 # MkDocs build output
 site/
 

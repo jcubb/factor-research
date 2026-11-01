@@ -2,11 +2,11 @@
 
 > Concept synthesis (not a single paper). Organizes the KB's momentum cluster into one framework. Companion reading: [[start-here]] Stage 2.
 
-Momentum is the most fragmented factor in the KB — the one place where "the same idea" splinters into a dozen variants that are easy to confuse. This article is the map: three axes that locate any momentum strategy, the subsumption debate over which variant is primary, the three competing explanations, and momentum's defining danger (crashes). It turns six paper articles into one teachable structure.
+Momentum is the most fragmented factor in the KB: "the same idea" splinters into a dozen variants that are easy to confuse. This article organizes them — three axes that locate any momentum strategy, the subsumption debate over which variant is primary, the three competing explanations, and momentum's defining risk (crashes). It draws on six paper articles.
 
 ## Why momentum needs a taxonomy
 
-Unlike value (one idea, a few ratios), momentum comes in kinds that behave differently and are priced differently: you can rank stocks against *each other* or against *their own past*; you can apply it to stocks, to factors, or to whole asset classes; and the signal can be a straight line, a sign, or an S-curve. Calling all of these "momentum" hides exactly the distinctions that matter for risk and implementation.
+Unlike value (one idea, a few ratios), momentum comes in kinds that behave differently and are priced differently: you can rank stocks against *each other* or against *their own past*; you can apply it to stocks, to factors, or to whole asset classes; and the signal can be a straight line, a sign, or an S-curve. Calling all of these "momentum" blurs distinctions that matter for risk and implementation.
 
 ## Axis 1 — Cross-sectional vs. time-series
 
@@ -17,7 +17,7 @@ Unlike value (one idea, a few ratios), momentum comes in kinds that behave diffe
 | Origin | [[jegadeesh-titman-momentum]] | TSMOM (Moskowitz-Ooi-Pedersen 2012 — not yet held; ingestion candidate) |
 | KB refinement | [[carhart-four-factor-persistence]] (UMD factor) | [[moskowitz-nonlinear-momentum]] (S-curve signal) |
 
-The distinction is not cosmetic: time-series momentum carries a directional market bet that cross-sectional momentum nets out, so the two diverge sharply in trending-vs-choppy markets.
+The two differ in substance: time-series momentum carries a directional market bet that cross-sectional momentum nets out, so they diverge sharply in trending vs. choppy markets.
 
 ## Axis 2 — What is the unit?
 
@@ -28,11 +28,11 @@ The distinction is not cosmetic: time-series momentum carries a directional mark
 | **Industries** | Sector returns persist | subsumed by TSFM in [[gupta-kelly-factor-momentum-everywhere]] |
 | **Asset classes** | Equities, bonds, FX, commodities each trend | [[moskowitz-nonlinear-momentum]], [[verdelhan-systematic-exchange-rates]] (carry's cousin) |
 
-This axis hosts the KB's central momentum argument (below): the claim that **factor** momentum is the primary object and stock momentum merely its shadow.
+This axis hosts the main momentum argument below: that **factor** momentum is the primary object and stock momentum largely a by-product.
 
 ## Axis 3 — Signal construction
 
-Three sub-choices define any implementation, and each is a lever with real P&L consequences:
+Three sub-choices define any implementation, and each affects realized P&L:
 
 - **Formation / holding / skip windows.** The canonical grid is formation *J* = 3–12 months, holding *K* = 3–12 months, with a **one-month skip** to dodge short-term reversal and microstructure noise ([[jegadeesh-titman-momentum]]). The practitioner "12-minus-2" convention is this skip made standard.
 - **Signal shape.** How a past return maps to a position weight:
@@ -43,7 +43,7 @@ Three sub-choices define any implementation, and each is a lever with real P&L c
 
 ## The subsumption debate — which momentum is primary?
 
-The KB's sharpest momentum result: **stock momentum may not be a distinct factor at all.**
+A central result in the momentum cluster: **stock momentum may not be a distinct factor at all.**
 
 - [[ehsani-linnainmaa-factor-momentum]] argue stock-level momentum is a *byproduct of autocorrelation in factor returns* — when factors trend, the stocks loading on them inherit the trend. Momentum is really the *timing* of other factors.
 - [[gupta-kelly-factor-momentum-everywhere]] confirm this at scale: time-series factor momentum (TSFM) across 65 factors subsumes both UMD and industry momentum, and crucially **avoids the 2009 momentum crash** (+18% vs. UMD's −31%).
@@ -68,7 +68,7 @@ Momentum's distinguishing risk is the **crash** — rare, violent losses that oc
 - factor momentum's crash-avoidance is a selling point — [[gupta-kelly-factor-momentum-everywhere]];
 - regime/volatility scaling and managed portfolios are common overlays — [[li-episodic-factor-pricing]], [[factor-cyclicality-and-timing]].
 
-Momentum has the highest Sharpe *and* the worst tail of the major factors; any honest treatment pairs the premium with the crash.
+Momentum has the highest Sharpe *and* the worst tail of the major factors; a complete treatment pairs the premium with the crash.
 
 ## One-glance map
 

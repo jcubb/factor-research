@@ -2,7 +2,7 @@
 
 > Concept synthesis (not a single paper). Ties together the KB's evidence on time-varying premia and the (contested) attempt to time them. Companion reading: [[start-here]] Stages 2 and 6.
 
-Factor premia are not constant. They wax and wane with the business cycle, with valuation spreads, and — on a sharper reading — switch "on" and "off" in regimes. That raises the most seductive and most dangerous question in factor investing: **can you time factors?** This article assembles the KB's evidence on both halves — that premia vary (well established) and that the variation is exploitable (hotly contested) — and lands on a disciplined practical verdict.
+Factor premia are not constant. They wax and wane with the business cycle, with valuation spreads, and — on a sharper reading — switch "on" and "off" in regimes. That raises one of the harder questions in factor investing: **can you time factors?** This article assembles the KB's evidence on both halves — that premia vary (well established) and that the variation is exploitable (contested) — and sets out a practical position.
 
 ## Part 1 — Premia vary (the easy claim)
 
@@ -32,7 +32,7 @@ A factor is "cheap" when the valuation gap between its long and short legs is un
 
 ### Signal C — Regime detection (time the factor by the state)
 
-[[li-episodic-factor-pricing]] identifies pricing-on states in real time using a squared-error-based regime statistic plus LASSO predictors, then scales exposure up in on-states. **Managed portfolios** built this way lift a nine-factor Sharpe from 1.18 to 1.56 — a concrete, sizable timing gain. The method is the most sophisticated conditioning approach in the KB.
+[[li-episodic-factor-pricing]] identifies pricing-on states in real time using a squared-error-based regime statistic plus LASSO predictors, then scales exposure up in on-states. **Managed portfolios** built this way lift a nine-factor Sharpe from 1.18 to 1.56 — a concrete, sizable timing gain. It is the most involved conditioning method the KB holds.
 
 ### Signal D — The skeptic's reply (near-arbitrage and fragility)
 
@@ -47,13 +47,13 @@ The common machinery across Signals A–C is the **managed portfolio** — a fac
 
 $$w_t = s_t \cdot w^{\text{base}}, \qquad f^{\text{managed}}_{t+1} = s_t \, f^{\text{base}}_{t+1}$$
 
-This is how timing is *operationalized* (and tested): a timed factor is just the base factor interacted with the signal. It is also how [[moskowitz-nonlinear-momentum]]'s S-curve and [[li-episodic-factor-pricing]]'s on-state scaling are built. The elegance is that a managed factor is still a factor — so it slots into the same risk model and attribution machinery ([[risk-model-anatomy]]) as an unmanaged one.
+This is how timing is *operationalized* (and tested): a timed factor is just the base factor interacted with the signal. It is also how [[moskowitz-nonlinear-momentum]]'s S-curve and [[li-episodic-factor-pricing]]'s on-state scaling are built. A managed factor is still a factor, so it slots into the same risk model and attribution machinery ([[risk-model-anatomy]]) as an unmanaged one.
 
 ## Practical verdict
 
-A defensible position that the KB's evidence supports:
+A position the KB's evidence supports:
 
-1. **Timing exists but is modest and fragile.** The honest effect is far smaller than naive backtests show; size it humbly (Signal D).
+1. **Timing exists but is modest and fragile.** The real effect is far smaller than naive backtests show; size it conservatively (Signal D).
 2. **Prefer robust, economically grounded signals.** Factor momentum (A) and regime conditioning (C) are better supported than valuation-spread timing (B) in *this* KB — though that partly reflects which papers are held.
 3. **Diversify across factors first, time second.** Cyclicality means a static multi-factor blend already captures much of the "rotation" benefit by letting factors take turns ([[msci-foundations-of-factor-investing]]).
 4. **Watch the parameter budget.** Every timing signal is a factor you've added; price it against the alignment cost ([[menchero-factor-alignment]]) and out-of-sample.

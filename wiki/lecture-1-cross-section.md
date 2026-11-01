@@ -28,7 +28,7 @@ By the end, students can:
 **Slide 1 · Hook.** Two stocks, same market, wildly different average returns over 20 years. Why? Pose it as *the* question of the course. *(Show two real cumulative-return lines.)*
 
 **Slide 2 · Two lenses.** Every answer is either **risk** (compensation, persists) or **mispricing** (correction, may erode). Put the dichotomy on the board; promise to return to it every lecture.
-- Talking point: this is the habit, not a fact to memorize.
+- Talking point: a lens to apply throughout, not something to memorize.
 - Source: [[capm-and-the-cross-section]] §"The question".
 
 ## Section B — The CAPM answer (12 min, slides 3–7)
@@ -57,9 +57,9 @@ By the end, students can:
 
 **Slide 12 · Models nest.** CAPM ⊂ FF3 ⊂ Carhart4 ⊂ FF5. Each keeps the zero-alpha regression and adds dimensions. Table of what each adds. Sources: [[fama-french-factor-models]], [[carhart-four-factor-persistence]].
 
-**Slide 13 · Alpha is model-relative.** The punchline: climbing the ladder reclassifies alpha as beta. A CAPM "star" fund may just be a momentum tilt. Forward-link to [[fama-french-luck-vs-skill]] (Lecture 2/assessment).
+**Slide 13 · Alpha is model-relative.** The key move: climbing the ladder reclassifies alpha as beta. A CAPM "star" fund may just be a momentum tilt. Forward-link to [[fama-french-luck-vs-skill]] (Lecture 2/assessment).
 
-**Slide 14 · Factors can kill factors.** HML becomes redundant once RMW and CMA enter — value was "profitability + investment in disguise." Adding a factor isn't free. Source: [[fama-french-factor-models]], mechanism [[novy-marx-gross-profitability]].
+**Slide 14 · Factors can absorb each other.** HML becomes redundant once RMW and CMA enter — value was "profitability + investment in disguise." Adding a factor isn't free. Source: [[fama-french-factor-models]], mechanism [[novy-marx-gross-profitability]].
 
 ## Section E — The factor zoo & skepticism (8 min, slides 15–17)
 

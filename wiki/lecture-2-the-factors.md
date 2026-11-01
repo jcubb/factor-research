@@ -59,9 +59,9 @@ By the end, students can:
 
 **Slide 14 · Can you time them? Four signals ranked.** Factor momentum (best supported) > regime detection > valuation spreads > (the skeptic's reply). Source: [[factor-cyclicality-and-timing]].
 
-**Slide 15 · The skeptic's reply.** Near-arbitrage (timing that good shouldn't survive), spurious-factor cost, out-of-sample decay. *Teach the humility here — this is where naive backtests lie.*
+**Slide 15 · The skeptic's reply.** Near-arbitrage (timing that good shouldn't survive), spurious-factor cost, out-of-sample decay. *Teach the humility here — this is where naive backtests mislead.*
 
-**Slide 16 · Managed portfolios — the honest test harness.** $f^{\text{managed}}_{t+1}=s_t\,f^{\text{base}}_{t+1}$: a timed factor is the base factor times a signal. Li's managed portfolios lift SR 1.18 → 1.56. Sources: [[factor-cyclicality-and-timing]], [[li-episodic-factor-pricing]].
+**Slide 16 · Managed portfolios — the test harness.** $f^{\text{managed}}_{t+1}=s_t\,f^{\text{base}}_{t+1}$: a timed factor is the base factor times a signal. Li's managed portfolios lift SR 1.18 → 1.56. Sources: [[factor-cyclicality-and-timing]], [[li-episodic-factor-pricing]].
 
 ## Section E — The dark side & synthesis (6 min, slides 17–18)
 
